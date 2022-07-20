@@ -8,20 +8,27 @@
     <script src="src/getApi.js"></script>
 </head>
 <body>
+    <h1>Create Appointment</h1>
     <form id="schedule-appointment">
         <label>Appointment Type</label>
         <input type="text" id="appt-type">
+        <br>
         <label>First Name:</label>
         <input type="text" id="first-name">
+        <br>
         <label>Last Name:</label>
         <input type="text" id="last-name">
+        <br>
         <label>Provider</label>
         <select type="select" id="provider">
         </select>
+        <br>
         <input type="date" id="start" name="trip-start" value="2022-07-20" min="2022-07-20" max="2024-01-01">
+        <br>
         <label>Notes</label>
         <input type="textarea" id="notes" rows="10" cols="30">
-        <button type="button" onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Call API</button>
+        <br>
+        <button type="button" onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Submit</button>
     </form>
 </body>
 </html>
