@@ -9,26 +9,46 @@
 </head>
 <body>
     <h1>Create Appointment</h1>
-    <form id="schedule-appointment">
-        <label>Appointment Type</label>
-        <input type="text" id="appt-type">
-        <br>
-        <label>First Name:</label>
-        <input type="text" id="first-name">
-        <br>
-        <label>Last Name:</label>
-        <input type="text" id="last-name">
-        <br>
-        <label>Provider</label>
-        <select type="select" id="provider">
+    <form id="schedule-appointment" method="put">
+        <label>Appointment Type:</label>
+        <select id="apptType">
+            <option value="established">Established</option>
+            <option value="initial">Initial</option>
+            <option value="enrollment">Enrollment</option>
+            <option value="advanced-care-planning">Advanced Care Planning</option>
+            <option value="transition-of-care">Transition of Care</option>
         </select>
         <br>
-        <input type="date" id="start" name="trip-start" value="2022-07-20" min="2022-07-20" max="2024-01-01">
+        <label>First Name:</label>
+        <input type="text" id="firstName">
         <br>
-        <label>Notes</label>
-        <input type="textarea" id="notes" rows="10" cols="30">
+        <label>Last Name:</label>
+        <input type="text" id="lastName">
         <br>
-        <button type="button" onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Submit</button>
+        <label>Provider: </label>
+        <select type="select" id="provider">
+            <option value="cassandra-gobel">Cassandra Gobel</option>
+            <option value="marla-hernandez">Marla Hernandez</option>
+            <option value="janet-baylis">Janet Baylis</option>
+            <option value="monique-washington">Monique Washington</option>
+            <option value="david-salmela">David Salmela</option>
+        </select>
+        <br>
+        <label>Appointment Date: </label>
+        <input type="date" id="apptDate" name="appt-start" value="2022-07-20" min="2022-07-20" max="2024-01-01">
+        <br>
+        <label for="notes">Notes:</label>
+        <textarea placeholder="Type any note" id="notes" rows="5" cols="30"></textarea>
+        <br>
+        <br>
+        <button type="button" onclick="callAPI(
+            document.getElementById('apptType').value,
+            document.getElementById('firstName').value,
+            document.getElementById('lastName').value,
+            document.getElementById('provider').value,
+            document.getElementById('apptDate').value,
+            document.getElementById('notes').value            
+        )">Submit</button>
     </form>
 </body>
 </html>
